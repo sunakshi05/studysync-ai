@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { LayoutDashboard, CheckSquare, Calendar, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
@@ -16,8 +17,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="flex h-screen bg-background">
       {/* Sidebar */}
       <aside className="w-64 bg-sidebar text-sidebar-foreground flex flex-col">
-        <div className="p-6">
+        <div className="p-6 flex items-center justify-between">
           <h1 className="text-2xl font-bold">StudySync</h1>
+          <ThemeToggle />
         </div>
         <nav className="flex-1 px-3">
           <ul className="space-y-1">
