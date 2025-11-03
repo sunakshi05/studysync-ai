@@ -11,6 +11,49 @@ export default function Dashboard() {
         </p>
       </div>
 
+      <Card>
+        <CardHeader>
+          <CardTitle>About StudySync</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <h3 className="font-semibold mb-2">Overview</h3>
+            <p className="text-sm text-muted-foreground">
+              StudySync is a comprehensive study companion application designed to help students and learners manage their academic routines efficiently. It combines task management, scheduling, and AI assistance in one unified platform.
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="font-semibold mb-2">Key Features</h3>
+            <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+              <li>Task Management: Create, track, and complete study tasks with progress monitoring</li>
+              <li>Smart Calendar: Schedule classes, study sessions, and meetings with time management</li>
+              <li>Dashboard: View productivity metrics including completion rates and study streaks</li>
+              <li>AI Assistant: Get intelligent suggestions for task prioritization and study planning</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-2">Tech Stack</h3>
+            <p className="text-sm text-muted-foreground">
+              React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui, React Router, TanStack Query, Lucide React, React Hook Form, Zod, Sonner
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-2">Benefits</h3>
+            <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+              <li>Centralized study organization in one place</li>
+              <li>Visual progress tracking to stay motivated</li>
+              <li>Time management with integrated calendar</li>
+              <li>AI-powered productivity suggestions</li>
+              <li>Clean, responsive interface that works on all devices</li>
+              <li>No setup required - start organizing immediately</li>
+            </ul>
+          </div>
+        </CardContent>
+      </Card>
+
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card className="border-l-4 border-l-primary">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
