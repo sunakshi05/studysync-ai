@@ -1,6 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, CheckSquare, Calendar, Sparkles, FileText } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Link, useLocation } from "react-router-dom"
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navigation = [
@@ -8,7 +6,7 @@ const navigation = [
   { name: "Tasks", href: "/tasks", icon: CheckSquare },
   { name: "Calendar", href: "/calendar", icon: Calendar },
   { name: "AI Assistant", href: "/ai-assistant", icon: Sparkles },
-  { name: "Report", href: "/report", icon: FileText },
+ 
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
