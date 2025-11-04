@@ -9,7 +9,9 @@ import Dashboard from "./pages/Dashboard";
 import Tasks from "./pages/Tasks";
 import CalendarPage from "./pages/CalendarPage";
 import AIAssistant from "./pages/AIAssistant";
-
+import Auth from "./pages/Auth";
+import StudyGroups from "./pages/StudyGroups";
+import StudyGroupDetail from "./pages/StudyGroupDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,17 +23,20 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Layout>
-            <Routes>
+          <Routes>
+            <Route path="/auth" element={<Auth />} />
+            <Route element={<Layout><div /></Layout>}>
               <Route path="/" element={<Dashboard />} />
               <Route path="/tasks" element={<Tasks />} />
               <Route path="/calendar" element={<CalendarPage />} />
               <Route path="/ai-assistant" element={<AIAssistant />} />
-              
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Layout>
+              <Route path="/study-groups" element={<StudyGroups />} />
+              <Route path="/study-groups/:id" element={<StudyGroupDetail />} />
+            </Route>
+            
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>

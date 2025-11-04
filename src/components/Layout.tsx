@@ -1,5 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, CheckSquare, Calendar, Sparkles } from "lucide-react";
+import { Link, useLocation, Outlet } from "react-router-dom";
+import { LayoutDashboard, CheckSquare, Calendar, Sparkles, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
@@ -7,6 +7,7 @@ const navigation = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
   { name: "Tasks", href: "/tasks", icon: CheckSquare },
   { name: "Calendar", href: "/calendar", icon: Calendar },
+  { name: "Study Groups", href: "/study-groups", icon: Users },
   { name: "AI Assistant", href: "/ai-assistant", icon: Sparkles },
 ];
 
@@ -24,7 +25,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <nav className="flex-1 px-3">
           <ul className="space-y-1">
             {navigation.map((item) => {
-              const isActive = location.pathname === item.href;
+              const isActive = location.pathname === item.href || 
+                (item.href === "/study-groups" && location.pathname.startsWith("/study-groups"));
               return (
                 <li key={item.name}>
                   <Link
@@ -48,7 +50,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       {/* Main Content */}
       <main className="flex-1 overflow-auto">
-        <div className="container mx-auto p-6 max-w-7xl">{children}</div>
+        <div className="container mx-auto p-6 max-w-7xl">
+          <Outlet />
+        </div>
       </main>
     </div>
   );
