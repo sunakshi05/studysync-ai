@@ -9,7 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import Tasks from "./pages/Tasks";
 import CalendarPage from "./pages/CalendarPage";
 import AIAssistant from "./pages/AIAssistant";
-import Report from "./pages/Report";
+
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,7 +27,7 @@ const App = () => (
               <Route path="/tasks" element={<Tasks />} />
               <Route path="/calendar" element={<CalendarPage />} />
               <Route path="/ai-assistant" element={<AIAssistant />} />
-              <Route path="/report" element={<Report />} />
+              
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
